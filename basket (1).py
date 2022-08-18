@@ -24,3 +24,23 @@ class Basket:
             self.items.append({"item": item_name, "total_price": total_price})
         except KeyError as e:
           print("KeyError: ", e)
+    
+    def value(self):
+        """
+        This function calculates the value of total price 
+        """
+
+        sum = 0
+
+        for i in self.items:
+          print(f"{i['item']} : {i['total_price']}")
+          sum += i['total_price']
+
+        print(f"Total Price is {sum}")
+
+    def display_items(self):
+        """"
+        Displays all the items in the basket
+        """
+        for i in self.items:
+          print(f"{i['item']} : {i['total_price']}")
