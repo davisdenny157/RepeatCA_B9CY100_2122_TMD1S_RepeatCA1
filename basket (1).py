@@ -44,3 +44,25 @@ class Basket:
         """
         for i in self.items:
           print(f"{i['item']} : {i['total_price']}")
+
+    def display_pricelist(self):
+        """
+        Displays the price list of all the items
+        """
+        for i in self.price_list:
+          print(i)
+
+
+if __name__ == "__main__":
+    basket_1 = Basket()
+    
+    while(True):
+        print()
+        item = input("Enter item name: ")
+        try:
+            qty = int(input("Enter the quantity: "))
+            basket_1.add_item(item, qty)
+        except Exception as e:
+            print(e)
+        else:
+            basket_1.value()
